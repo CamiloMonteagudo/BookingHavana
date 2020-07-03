@@ -1,0 +1,298 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<title>Reservar habitaciones en BookingHavana</title>
+
+<link href="css/BookingHav.css" rel="stylesheet" type="text/css">
+<link href="js/jquery-ui.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="ReservFrm" style="position:relative; top:-470px;">
+  <form>
+    <h1 style="text-align:center; margin:0;">Hacer una reserva</h1>
+    <hr class="UpSep" style="margin-top: 8px;">
+    <div id="pProp"></div>  
+       
+    <div id="centro" >
+      <div id="Datos" >
+        <ul class="FormInput">
+          <li class="col2">
+            <label for="FIni">Fecha de entrada*</label>
+            <input type="text" placeholder="dd/mm/aa" id="FIni" name="FIni" readonly>
+          </li>
+          <li class="col2">
+            <label for="FFin">Fecha de salida*</label>
+            <input type="text" placeholder="dd/mm/aa" id="FFin" name="FFin" readonly>
+          </li>
+          <li class="col1">
+            <label for="UName">Nombre*</label>
+            <input type="text" placeholder="Escriba su nombre" id="UName" name="UName">
+          </li>
+          <li class="col1">
+            <label for="eMail">Correo*</label>
+            <input type="text" placeholder="nombre@dominio.com" id="eMail" name="eMail">
+          </li>
+          <li class="col3">
+            <label for="Pers">Personas*</label>
+            <input type="number" id="Pers" name="Pers" min="1" value="2">
+          </li>
+          <li class="col3">
+            <label for="Menores">Niños</label>
+            <input type="number" id="Menores" name="Menores" min="0" value="0">
+          </li>
+          <li class="col3">
+            <label for="NHab">Habitaciones</label>
+            <input type="number" id="NHab" name="NHab" min="1" value="1">
+          </li>
+          <li class="col1">
+            <label for="Coments">Comentarios</label>
+             <textarea id="Coments" maxlength="255" rows="2" cols="255"></textarea>
+          </li>
+        </ul>
+      
+      </div>
+      
+      <div id="Result" style="float:left; top:0; left:0; min-height:270px; display:none;">
+        <div id="Info">
+          <p>Regístramos su pedido de reservación y como constacia hemos enviado un correo a la dirección suministrada, en un tiempo breve tramitaremos su solicitud y nos mantendremos en contacto con usted por esa via.</p>
+          <p><b>Nota:</b> Si no recive ninguna noticia de BookingHavana repita la reservación y asegurase que la dirección de correo suministrada sea la correcta.</p>
+        </div>
+      </div>
+
+    <div style="clear:both;"></div>
+    </div>
+  
+    <div class="UpSep" style="margin-top:10px;">  
+      <div class="block50">  
+        <div id="btnReserva2" class="BotonG center"><img src="images/reservar.svg" alt=""/> Reservar</div>
+      </div>
+      <div class="block50">  
+        <div id="btnCerrar2" class="BotonG center"><img src="images/reservar.svg" alt=""/> Cerrar</div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<!------------------------------------------------------------------------------------------------>
+<!-- CODIGO JAVASCRIPT  -->
+<!------------------------------------------------------------------------------------------------>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/BookingHav.js"></script>
+
+<script type="text/javascript">
+
+var Datos, dpkIni, dpkFin, Wait;
+
+Date.OneDay = (1000*60*60*24);
+Date.AddDays = function( fRef, nDay ){return new Date(fRef.getTime()+nDay*Date.OneDay);};
+
+// Inicia manipuladores y variables, después de cargarse la página
+$(function() 
+  {
+  Datos = parent.GetFrameDatos();
+  
+  $("#pProp").text( Datos.pProp );
+    
+  $("#ReservFrm").animate({top:10}, 500 );
+  
+  $("#btnCerrar2").click( Cerrar );  
+    
+  $("#btnReserva2").click(function(e) 
+    { 
+    if( ValidateDatos() ) DoReseva();
+    });  
+    
+  dpkIni = IniDataPicker( $("#FIni"), OnChangeFechaIni );
+  dpkFin = IniDataPicker( $("#FFin"), null );
+  
+  SetFechaIni();
+  SetFechaFin();
+
+  var User = GetLogUser();
+  if( User.Id  )                       
+    {
+    $("#UName").val( User.Nombre );
+    $("#eMail").val( User.Correo );
+    }
+  else
+    {
+    if( localStorage.LastUserName ) $("#UName").val( localStorage.LastUserName );
+    if( localStorage.LastUserMail ) $("#eMail").val( localStorage.LastUserMail );
+    }
+  
+  });
+
+// Se llama cada vez que se cambia la fecha inicial
+function OnChangeFechaIni() 
+  {
+  SetFechaFin();
+  }
+
+// Provoca que se cierre el iFrame de reservar
+function Cerrar() 
+  { 
+  $("#ReservFrm").animate({top:-600}, 500, function() 
+    { 
+    parent.CloseFrame(); 
+    });
+  }
+
+// Asocia un datapicker a un elemento y pone la función de seleccion
+function IniDataPicker( elem, funClose )
+  {
+  return elem.datepicker(
+    {
+    showButtonPanel: false,
+    changeMonth: false,
+    changeYear: false,  
+    dateFormat:"D dd M yy",
+    onClose: funClose
+    });
+  }
+
+// Pone los limites de la fecha inicial
+function SetFechaIni()
+  {
+  var now = new Date();  
+  SetMinAndMax( dpkIni, Date.AddDays(now,1), Date.AddDays(now,214) );
+  }
+
+// Pone limites de la fecha final y garantiza que siempre sea mayor que la inicial  
+function SetFechaFin()
+  {
+  var now = new Date();  
+  var ini = dpkIni.datepicker( "getDate" );
+  if( !ini ) ini = Date.AddDays( now, 1);
+  
+  var fMin = Date.AddDays( ini, 1);
+  var fMax = Date.AddDays( ini, 100);
+    
+  SetMinAndMax( dpkFin, fMin, fMax );
+  }
+
+// Pone los limites maximos y minimos de una fecha
+function SetMinAndMax( dp, fmin, fmax )
+  {
+  dp.datepicker( "option", "minDate", fmin );  
+  dp.datepicker( "option", "maxDate", fmax );  
+  }
+
+// Verifica que los datos instroducidos son correctos
+function ValidateDatos()
+  {
+  if( dpkIni.datepicker( "getDate" ) == null  )
+    {
+    alert("Especifique la 'Fecha de entrada' de su reservación");  
+    $("#FIni").focus();
+    return false;
+    }
+    
+  if( dpkFin.datepicker( "getDate" ) == null  )
+    {
+    alert("Especifique la 'Fecha de salida' de su reservación");  
+    $("#FFin").focus();
+    return false;
+    }
+  
+  var Nombre = $("#UName").val();
+  if( Nombre.length < 3 )  
+    {
+    alert("Especifique un nombre de usuario");  
+    $("#UName").focus();
+    return false;
+    }
+    
+  var eMail = $("#eMail").val();
+  if( !reMail.test(eMail)) 
+    { 
+    alert("El correo electronico está incorrecto");  
+    $("#eMail").focus();
+    return false;
+    }
+  
+  return true;
+  }
+
+// Registra la reservación en el servidor y envia correos
+function DoReseva()
+  {
+  var user = $("#UName").val(); 
+  var mail = $("#eMail").val(); 
+    
+  localStorage.LastUserName = user;  
+  localStorage.LastUserMail = mail;  
+  
+  Wait = new ShowWait( "#ReservFrm" );  
+  
+  Datos.FIni = FormatDbFecha( dpkIni );
+  Datos.FFin = FormatDbFecha( dpkFin );
+  Datos.User = user;
+  Datos.Mail = mail;
+  Datos.Pers = +$("#Pers").val(); 
+  Datos.Menores = +$("#Menores").val(); 
+  Datos.Hab = +$("#NHab").val(); 
+  Datos.Coments = $("#Coments").val(); 
+  
+  var sData = JSON.stringify(Datos);
+  var Data  = 'Data='+encodeURIComponent( sData );
+  
+  $.ajax({ url: "DoReserva.php", data: Data, type:"POST",
+       complete: function( xhr )
+          { 
+          Wait.Hide();
+          
+          if( checkReturn( xhr ) ) 
+            {
+            $("#Datos").hide();
+            $("#btnReserva2").hide();
+            
+            $("#Result").show();  
+            }
+          }
+    });
+  }
+  
+// Muestra un cursor de espera
+function ShowWait( idWait )
+  {
+  var htm = '<div id="WaitImg" class="wait-up">'+
+              '<img src="images/wait-cur.gif" alt="" class="wait-cursor" style="width: 32px; height: 32px; margin-left:-16px;"/>'+
+            '</div>';
+            
+  $(idWait).append( htm ); 
+  
+  this.Hide = function()
+    { $('#WaitImg').remove(); };
+  }
+
+function FormatDbFecha( dpk )
+  {
+  var fecha = dpk.datepicker("getDate");
+  
+  var dia  = fecha.getDate();
+  var mes  = fecha.getMonth()+1;
+  var ano  = fecha.getYear() + 1900;
+  
+  return  ano + '-' + mes + '-' + dia;  
+  }
+    
+  
+</script>  
+
+
+</body>
+</html>

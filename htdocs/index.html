@@ -1,0 +1,532 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<title>Booking Havana</title>
+
+<link href="css/BookingHav.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<!--------------------------------------- Encabezamiento ----------------------------------------->
+<div class="header"> 
+  <img class="logo" src="images/LogoBH.svg" alt="logo"/>
+  <div class="menu-btn"><img src="images/menu.svg" alt="menu"/></div>
+  <div class="menu"> 
+    <div class="item"> Inicio </div>
+    <div class="item"> <img class="icon_M" src="images/login.svg" alt="" /><span id="User"></span></div>
+  </div>
+</div>
+    
+<!--------  --------------------------- Banner superior ------------------------------------------>
+<div style="position:relative">
+  <div class="banner"> 
+  <!--  <img src="images/fondo1.png" alt="" onLoad="LoadedBanner();" >-->
+  </div>
+</div>
+
+<!---------------------------------------- Busca tu hogar ---------------------------------------->
+<div class="FilterMain">
+  <h1> Busca tu hogar en la isla.</h1>
+  <div class="Data">
+    <div id="selLoc"   class="ComboFilter"><span>Localidad</span></div>
+    <div id="selPrec"  class="ComboFilter"><span>Precio</span></div>
+    <div id="selHabts" class="ComboFilter"><span>Habitaciones</span></div>
+    <div id="selOtros" class="ComboFilter">Características <b></b></div>
+    <div class="btnBuscar"  >Buscar </div>
+  </div>
+  <div class="Favoritos"> 
+    <div class="Item" onClick="ClickLink(1);">• Favoritas </div> 
+    <div class="Item" onClick="ClickLink(2);">• Casa con piscina</div>
+    <div class="Item" onClick="ClickLink(3);">• Casas de lujo</div> 
+    <div class="Item" onClick="ClickLink(4);">• Hostales</div> 
+    <div class="Item" onClick="ClickLink(5);">• Casas en la playa</div> 
+    <div class="Item" onClick="ClickLink(6);">• Económicas </div> 
+   </div>
+</div>
+
+<!---------------------------------------- Destinos ---------------------------------------------->
+<div class="Destinos">
+  <div class="Title"> Principales destinos </div>
+  <div class="Frame">
+    <div class="Box" onClick="ClickLink(7) ;"><img src="images/Destino1.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+    <div class="Box" onClick="ClickLink(8) ;"><img src="images/Destino2.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+    <div class="Box" onClick="ClickLink(9) ;"><img src="images/Destino3.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+    <div class="Box" onClick="ClickLink(10);"><img src="images/Destino4.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+    <div class="Box" onClick="ClickLink(11);"><img src="images/Destino5.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+    <div class="Box" onClick="ClickLink(12);"><img src="images/Destino1.jpg" alt="" /><div class="Hdr"><span></span></div></div>
+</div>
+</div>
+
+<!----------------------------------------- Booking ---------------------------------------------->
+<div class="Booking">
+  <img class="imgBCT" src="images/Booking.jpg" alt="" >
+<div class="Box">
+  <h1>¿Buscas conocer la isla?</h1>
+  <h4>Si lo que deseas es conocer cada rincón de Cuba, ven con nosotros a Booking Cuba Tours</h4>
+  <a href="www.BookingCubaTours.com" target="new"><img src="images/logoBCT.png" alt=""/></a>
+</div>  
+</div>
+
+<!------------------------------------- Casas destacadas ----------------------------------------->
+<div class="busca">
+  <div class="Title 1"> Busca las mejores? </div>
+  <div class="text"> Aquí te brindamos las mejores casas de alquiler según los propios usuarios </div>
+</div>
+<div id="Destacadas">
+  <div class="Title"> Casas de alquiler más destacadas de Cuba </div>
+  <div class="Frame">
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+    <div class="Box">
+      <img class="CasaMBox ImgCasa" src="#" alt=""/>
+      <div class="Stars"></div>
+        
+      <div class="footer">
+        <span class="title"></span>
+        <span class="precio"></span>
+        <img src="images/ArrowUp.png" alt=""/>
+      </div>
+    </div>
+</div>
+</div>
+
+<!----------------------------------------- Facebook --------------------------------------------->
+<div class="MeGusta">
+  Si te gusta <a href="#">Booking Havana</a> dale clic en me gusta
+  <div class="button"> 
+    <img src="images/Like it.jpg" alt="" /> me gusta
+  </div>  
+</div> 
+
+<!------------------------------------------ Footer ---------------------------------------------->
+<div id="PageFooter">
+  <div class="content">
+    <div class="block contacto">
+      <div class="Title">Nosotros</div>
+      <div class="text">
+        <div><img src="images/GrupoBH.jpg" alt="" style="width:100%" /> </div>
+      </div>
+    </div>
+      
+    <div class="block correo">
+      <div class="Title"> Booking Havana </div>
+      <div> Agencia gestora de alojamiento para casas particulares de alquiler en Cuba. </div>
+      <br/>
+      <div class="text">Dirección:</div>
+      <div class="text">Vedado, La Habana, Cuba</div>
+      <br/>
+      <div class="text">Cel: +53 53465756 </div>
+      <div class="text gmail"><a href=""><img src="images/Correo.png" alt=""/>Alex@bookinghavana.com </a></div>
+    </div>
+  
+    <div class="block Pages">
+      <div class="Title"> Páginas </div>
+      <div class="text">
+        <div><a href="politica-de-privacidad.php"> • Política de Privacidad.</a></div>
+        <div><a href="terminos-y-condiciones.php"> • Términos y condiciones</a></div>
+        <div><a href="javascript:EditCasa()"> • <span id="lnkEdProp">Inscribir</span> propiedad</a></div>
+        <div><a href="enlaces-de-interes.php"> • Enlaces de interés</a></div>
+        <div><a href="acerca-de-nosotros.php"> • Acerca de nosotros</a></div>
+      </div>
+    </div>
+  </div>  
+
+<div class="rigths">© Booking Havana 2015 All rights reserved </div>
+
+ </div>  
+
+<!------------------------------------------------------------------------------------------------>
+<!--  Segmentos de manejo dinamico                                                             --->
+<!------------------------------------------------------------------------------------------------>
+<div id="HidedBoxs" style="display:none">
+<!-- Cuadro de features de la habitación -->
+<div id="BoxOtros" >
+  <div class="chkItem"><input type="checkbox"><img src="images/aire.svg" alt="" /><span>A. Acondicionado</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/piscina.svg" alt="" /><span>Piscina</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/lavadora.svg" alt="" /><span>Lavadora</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/privado.svg" alt="" /><span>Independiente</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/lavadora.svg" alt="" /><span>De lujo</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/aire.svg" alt="" /><span>Hostal</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/piscina.svg" alt="" /><span>En la playa</span></div>
+  <div class="chkItem"><input type="checkbox"><img src="images/piscina.svg" alt="" /><span>Favoritas</span></div>
+</div>
+
+<!-- Cuadro de selección de la localidad -->
+<div id="LocBox">
+  <div class="Left">
+    <div class="item select">...</div>
+  </div>
+  <div class="Rigth"> 
+    <div class="item">...</div>
+   </div>
+</div>
+
+<!-- Cuadro de selección del rango de precios -->
+<div id="PrecioBox">
+  <label>Precios menor a:</label>
+    <div class="RangeFix">
+      <label max="25"><input type="radio" name="prec"><span>25 CUC</span>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <label max="35"><input type="radio" name="prec"><span>35 CUC</span>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <label max="40"><input type="radio" name="prec"><span>40 CUC</span></label>
+    </div>
+  
+  <label>Precios mayor a:</label>
+    <div class="RangeFix">
+      <label min="50"><input type="radio" name="prec"><span>50 CUC</span>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <label min="80"><input type="radio" name="prec"><span>80 CUC</span>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <label min="100"><input type="radio" name="prec"><span>100 CUC</span></label>
+    </div>
+  <div id="RangeBox">
+    <label id="LabelLeft"></label>
+    <div class="Bar"></div>
+    <div id="PointerLeft" class="Pointer">
+      <img src="images/Pointer.png" alt=""/>
+    </div>
+    <div id="PointerRight" class="Pointer">
+      <img src="images/Pointer.png" alt=""/>
+    </div>
+
+  </div>
+</div>
+
+<!-- Cuadro de selección de las habitaciones -->
+<div id="HabitsBox">
+  <div class="NumHab"><label class="chk"><input id="chk1" type="checkbox">Número de habitaciones</label>
+    <div class="n-hab">
+      <label class="hab">Desde: </label><input id="Min" type="number" min="1" name="Hab"> Hab.
+    </div>
+    <div class="n-hab">
+      <label class="hab">Hasta: </label><input id="Max" type="number" min="0" name="Hab"> Hab.
+    </div>
+  </div>
+
+  <div><label class="chk"><input id="chk2" type="checkbox">Toda la casa</label></div>
+  <div><label class="chk"><input id="chk3" type="checkbox">Pago mensual</label></div>
+  <div class="Estud"><label class="chk"><input id="chk4" type="checkbox">Para estudiante</label></div>
+</div>
+
+<!-- Cuadro para loguearse o crear usuario nuevo -->
+<div id="BoxUser" class="BoxFloat">
+  <div id="LogIn" >
+    <div><input class="LineInput" type="text"     placeholder="Usuario o Correo"/></div>
+    <div><input class="LineInput" type="password" placeholder="Contraseñas"/></div>
+    <div class="MsgError" ></div>
+    <div class="btnRight">Entrar</div>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="NewUser" >
+    <div><input class="LineInput" type="text"     placeholder="Correo electrónico"/></div>
+    <div><input class="LineInput" type="text"     placeholder="Usuario"/></div>
+    <div><input class="LineInput" type="password" placeholder="Contraseñas"/></div>
+    <div><input class="LineInput" type="password" placeholder="Confirmar contraseñas"/></div>
+    <div><input class="isProp"    type="checkbox"/><label for="isProp">Propietario</label></div>
+    <div><input class="LineInput Telef" type="text"     placeholder="Teléfono"/></div>
+    <div class="MsgError" ></div>
+    <div class="btnRight">Crear</div>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="EditUser" >
+    <div><input class="LineInput" type="text"     placeholder="Correo electrónico"/></div>
+    <div><input class="LineInput" type="text"     placeholder="Usuario"/></div>
+    <div><input class="LineInput" type="password" placeholder="Contraseñas"/></div>
+    <div><input class="LineInput" type="password" placeholder="Confirmar contraseñas"/></div>
+    <div><input class="isProp"    type="checkbox"/><label for="isProp">Propietario</label></div>
+    <div><input class="LineInput Telef" type="text"     placeholder="Teléfono"/></div>
+    <div class="MsgError" ></div>
+    <div class="btnRight">Modificar</div>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="MsgActive" >
+    <p>Hemos re-enviado el correo de validación del usuario.</p>
+    <p>Revise su buzón, y siga el enlace para completar el proceso.</p>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="MsgPassWord" >
+    <p>Le hemos enviado la contraseña a la dirección de correo electrónico asociada al nombre de usuario.</p>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="MsgUpdate" >
+    <p>Los datos del usuario actual, fueron actualizados satisfactoriamente .</p>
+    <p>Para que los cambios tengan efecto, debe que salir y volver a entrar</p>
+    <div class="btnLeft">&lt;&lt;</div>
+  </div>
+  
+  <div id="mnuUser" class="list">
+    <div class="item-pu" cmd="1">Salir</div>
+    <div class="item-pu" cmd="2">Entrar como Usuario</div>
+    <div class="item-pu" cmd="3">Crear nuevo Usuario</div>
+    <div class="item-pu" cmd="4">Editar datos de Usuario</div>
+    <div class="item-pu" cmd="5">Inscribir propiedad</div>
+  </div>
+  
+</div>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<!------------------------------------------------------------------------------------------------>
+<!--- CODIGO JAVASCRIPT  --->
+<!------------------------------------------------------------------------------------------------>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/BookingHav.js"></script>
+
+<script type="text/javascript">
+
+var Menu, FInfo, TopDest, TopCasas;
+
+$(function() 
+  {
+  Menu = new MainMenu(); 
+  FInfo = new FilterInfo();
+    
+  $('.banner').append( '<img src="images/fondo1.jpg" onLoad="NextImgBanner();" onerror="ImgError();">' );
+
+  $(".btnBuscar").click( OnBuscarCasas );
+  $("#Destacadas .Frame .Box").click(GotoCasa);
+  $("#Destacadas .Frame .Box .footer").click(ShowDetail);
+  
+  Menu.HideMenu(0);
+  
+  LoadCasas();
+  });
+
+var newImage;
+var nextImg = 2; 
+
+function NextImgBanner()
+  {
+  if( nextImg>3 ) nextImg = 1;
+  var imgPath = "images/fondo"+ nextImg + ".jpg"
+  newImage = $('<img src="' + imgPath +'" style="position:absolute; display:none;" onerror="ImgError();">');
+  
+  newImage.load( function(){ setTimeout( ChangeBanner, 10000); } );
+  }
+
+function ChangeBanner( )
+  {
+  ++nextImg;
+  var oldImage = $('.banner img');
+
+  $('.banner').prepend(newImage);
+  
+  newImage.fadeIn(3000);
+  oldImage.fadeOut(3000,function()
+    { 
+    newImage.css( "position", "relative" );
+    oldImage.remove();
+    NextImgBanner();
+    }); 
+  }
+  
+function ImgError()
+  {
+  ++nextImg;
+  newImage.remove();
+  NextImgBanner();
+  return false;
+  }
+ 
+// Atiende el boton de buscar casas 
+function OnBuscarCasas()
+  {
+  FInfo.Save();  
+  location = "casas-particulares-en-cuba.php";  
+  }
+ 
+// Cuando se oprime una casa destacada
+function GotoCasa()
+  {
+  var box = $(this);
+  if( box.find(".BoxDeatails").length>0 )
+    return;
+    
+  var idx = box.attr( "id" );
+  var cs  = TopCasas[idx];
+  
+  window.location = GetCasaLnk( cs.Id, cs.pLoc, cs.pProp, '' );
+  }
+ 
+// Atiende uno de los enlaces directos de buscar casa 
+function ClickLink( nLnk )
+  {
+  FInfo.GoFavLink( nLnk );  
+  }
+ 
+// Descarga las casas destacadas desde el servidor
+function LoadCasas()
+  {
+  $.ajax({ url: "GetTopDatos.php", data: "", type:"POST",
+    complete: function( xhr )
+      { 
+      checkReturn( xhr, function( datos )
+        {
+        TopDest  = datos.Destinos;
+        TopCasas = datos.Casas;
+        
+        $("#Destacadas .Box").each( function(idx, elem) 
+          {
+          var cs = TopCasas[idx];  
+          var box = $(elem);
+          
+          box.attr( "id", idx );
+          box.find(".ImgCasa").attr("src", ImgPath(cs,"M",0));
+          box.find(".title").text(cs.pProp);
+          
+          if( cs.pPrecHab>0 ) box.find(".precio").text( cs.pPrecHab );
+          else                box.find(".precio").css( "display", "none" );
+          
+          var stars = box.find(".Stars");
+          for( var i=0; i<cs.pRank; ++i )
+            stars.append('<img src="images/StarA.png" alt=""/>');
+    
+          for( ; i<5; ++i )
+            stars.append('<img src="images/StarB.png" alt=""/>');
+          });
+          
+        $(".Destinos .Hdr").each( function(idx, elem) 
+          {
+          var dst = TopDest[idx];
+          elem.innerHTML = dst.Name + ' <span>'+dst.nCasas+' casas<span>';
+          });
+        });
+      }
+    });
+  }
+
+// Obtiene el codigo Html, para mostrar los detalles de la casa idx 
+function HtmlCasaDetalles( idx )
+  {
+  var cs = TopCasas[idx];  
+  var ft = [], sMenu1="", sMenu2="";
+  var  n = 0;
+  
+  ft[n++] = '<div><img src="images/HabitB.svg" alt=""/>'+ cs.pNHab +' habitaciones</div>';
+   
+  if( cs.pPisc      ) ft[n++] = '<div><img src="images/PiscinaB.svg" alt=""> piscina </div>';
+  if( cs.pAire      ) ft[n++] = '<div><img src="images/AireB.svg" alt="" />A. Acondicionado</div>';
+  if( cs.pLab       ) ft[n++] = '<div><img src="images/LavadoraB.svg" alt="" /> Lavadora </div>';
+  if( cs.pIndp      ) ft[n++] = '<div ><img src="images/PrivadoB.svg" alt="" />Independiente</div>';
+  if( cs.pPrecAll>0 ) ft[n++] = '<div><img src="images/AireB.svg" alt="" />Precio: '+cs.pPrecAll+' CUC</div>';
+
+  for( var i=0; i<5 && i<n; ++i )
+    sMenu1 += ft[i];
+    
+  for( ;i<10 && i<n; ++i )
+    sMenu2 += ft[i];
+        
+  var html = 
+  '<div class="BoxDeatails">'+
+    '<div class="roll" > DETALLES </div>'+
+    '<div>'+
+      '<div class="Menu">'+ sMenu1 +'</div>'+
+      '<div class="Menu">'+ sMenu2 +'</div>'+
+    '</div>'+  
+  '</div>';
+  
+  return html;
+  }
+
+// Muestra/Oculta los detalles de una casa
+function ShowDetail( )
+  {
+  var box = $(this).parent(".Box");
+  var img = $(this).find("img");
+  
+  var detail = box.find(".BoxDeatails");
+  if( detail.length > 0 )
+    {
+    detail.animate( {top:"100%"}, 500, function() 
+      {
+      detail.remove();
+      img.attr( "src", "images/ArrowUp.png" );  
+      });   
+      
+    return false;
+    }
+  
+  var idx = box.attr( "id" );
+  var html = HtmlCasaDetalles( idx );
+  
+  box.append( html );
+  detail = box.find(".BoxDeatails");
+  
+  detail.animate( {top:0}, 500, function()
+    {
+    img.attr( "src", "images/ArrowDown.png" );  
+    });   
+    
+  return false;  
+  }
+ 
+</script>  
+
+
+</body>
+</html>
