@@ -1,0 +1,1999 @@
+@charset "utf-8";
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: Gotham, "Helvetica", Helvetica, Arial, sans-serif;
+  color: #565a5c;
+  font-size: 16px;
+  min-width: 300px;
+  }
+
+a {text-decoration:none; }
+
+.left-bottom{
+  position:absolute; 
+  left:0; 
+  bottom:0; 
+  }
+
+.right-bottom{
+  position:absolute; 
+  right:0; 
+  bottom:0; 
+  }
+
+.rigth-top {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+  }
+  
+.wait-cursor{
+  display:inline-block; 
+  position:absolute; 
+  margin-top:-16px; 
+  margin-left:-16px; 
+  top:50%; 
+  left:50%;
+  }
+
+.Hover:hover, .BtnFlat:hover, .BotonM:hover, .BotonG:hover {
+	background-color: aliceblue !important;
+  cursor:pointer;
+  }  
+
+.icon {
+  width:20px;
+  height:20px;
+  vertical-align:middle;
+  margin-bottom: 5px;
+  }
+
+.icon_M {
+  width:25px;
+  height:25px;
+  vertical-align:middle;
+  margin-bottom: 5px;
+  }
+
+.ChgCasa {
+  width:50px; 
+  height:50px; 
+  position:absolute; 
+  top:50%; 
+  margin-top:-25px; 
+  opacity:0.5;
+  cursor:pointer;
+  z-index:5;
+  }
+  
+.ChgCasa.btnPrev {left:0px;}
+.ChgCasa.btnNext {right:0px;}
+.ChgCasa:hover { opacity:1;}
+
+.group { white-space:nowrap; }
+
+/* Encabezamiento de la página*/
+.header
+  {
+  height: 80px;
+  line-height: 80px;
+  background-color: #F8F8F8;
+  }
+  
+.header img{vertical-align:middle;}
+  
+.header .logo
+  {
+  height:50px;
+  vertical-align:middle;
+  margin-left:60px;
+  }
+  
+.header .menu
+  {
+  display: inline-table;
+  float: right;
+  height: 80px;
+  line-height: 80px;
+  color: #101010;
+  font-weight: bold;
+  z-index: 1100;
+  margin-right:10px;
+  }
+  
+.header .menu .item
+  {
+  position:relative;  
+  display:inline;
+  cursor:pointer;
+  padding:10px;
+  white-space:nowrap;
+  z-index: 1500;
+  }
+  
+.header .menu .item #User
+  {
+  padding-left:5px;  
+  }
+  
+.header .menu .item:hover
+  {
+  background-color:#C4DEFC;  
+  }
+  
+.header .menu-btn  
+  {
+  float:right;  
+  width:80px;
+  height:80px;
+  line-height:80px;
+  display:none;
+  margin-right:15px;
+  cursor:pointer;
+  }
+
+.header .menu-btn img 
+  {
+  width:40px;
+  margin-left:20px; 
+  }
+
+.popup
+  {
+  position: absolute;
+  width:auto;
+  color: #101010;
+  border: 1px solid #000000;
+  padding: 10px;
+  background-color: #FFFFFF;
+  display:none;
+  z-index:3500;
+  line-height:normal;
+  font-weight:normal;
+  cursor:default;
+  box-shadow: 5px 5px 30px #808080;
+  box-sizing:border-box;
+  }  
+
+.popup .item-pu, .list .item-pu
+  {
+  height:30px;
+  line-height:30px;
+  padding: 5px 10px;
+  white-space:nowrap;
+  cursor:pointer;
+  display:block;
+  }
+   
+.thin .popup .item-pu{ padding:0px 10px; }
+
+.item-pu:hover { background-color:#C4DEFC; cursor:pointer; }
+  
+.popup.logIn
+  {
+  line-height:40px;
+  text-align: center;
+  }
+  
+.popup.notify
+  {
+  width:200px;
+  white-space: normal;
+  }
+
+@media (max-width: 767px) {
+  .header .menu
+    {
+    display:none;
+    position:absolute;
+    
+    border: 1px solid #000000;
+    padding: 10px;
+    background-color: #FFFFFF;
+    height:auto;
+    box-shadow: 5px 5px 30px #808080;
+    }
+    
+  .header .menu .item
+    {
+    display:block;
+    height:40px;
+    line-height:40px;
+    }
+    
+  .header .menu-btn { display:block; }
+  .header .logo  { margin-left:10px; }
+  }
+  
+/* Zona de Banner */
+.banner { position:relative; overflow: hidden; width: 100%;}
+.banner img
+  {
+  width:100%; 
+  height:auto;
+  min-width: 490px;
+  }
+
+/* Zona para buscar casas  */
+.FilterMain {
+	position: relative;
+	background-color: #D8D8D8;
+	padding: 10px;
+	box-sizing: border-box;
+  }
+    
+.FilterBox
+  {
+  height:175px;
+  width:100%;
+  background-color: #D8D8D8;
+  }
+
+.FilterFloat
+  {
+  position:absolute;
+  top:80px;
+  left:0;
+  }
+
+.FilterMain h1
+  {
+  font-weight: 700;
+  font-size: 25px;
+  
+  width: 100%;
+  height: 50px;
+  line-height:50px;
+  text-align:center;
+  margin:0;
+  }
+  
+.FilterMain .Data
+  {
+  width: 1000px;
+  height: 47px;
+  color: #4b4b4b;
+  font-size: 14px;
+  cursor:pointer;
+  margin-right:auto;
+  margin-left:auto;
+  background-color: #D8D8D8;
+  }
+
+.ComboFilter {
+	width: 213px;
+	height: 47px;
+	line-height: 47px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 2px;
+	background-color: #FFFFFF;
+	background-image: url(../images/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	display: inline-block;
+	box-sizing: border-box;
+  white-space: nowrap;
+  font-size:16px;
+  font-weight:normal;
+  }
+   
+.FilterMain .btnBuscar {
+	width: 120px;
+	height: 47px;
+	line-height: 47px;
+	color: #FFFFFF;
+	font-size: 12px;
+	text-align: center;
+	background-color: #E9761A;
+	display: inline-block;
+	box-sizing: border-box;
+  } 
+
+.FilterMain .Favoritos
+  {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  }
+  
+.FilterMain .Favoritos .Item 
+  {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #0077A2;
+	font-size: 14px;
+	white-space: nowrap;
+	cursor: pointer;
+	padding-right: 4px;
+	padding-left: 4px;
+  }  
+
+@media (max-width: 1000px){
+  .FilterMain .Data {width: 750px;}
+  .ComboFilter {width: 150px;}
+  }
+@media (max-width: 767px) { 
+  .FilterBox   { height: auto;}
+  .FilterFloat { position:relative; top:0;}
+  .FilterMain .Data {
+    width: 450px;
+    height: auto;
+    z-index: 100;
+    cursor: default;
+    }    
+ 
+  .ComboFilter
+    {
+  	width: 213px;
+    margin:5px;
+    }
+  
+  .FilterMain .btnBuscar 
+    {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:5px;
+    display:block;
+    }
+    
+/*  .FilterMain { height:0;}*/
+  .FilterMain .Favoritos { display: none; }
+  }
+@media (max-width: 460px) { 
+  .FilterMain .Data {
+    width:100%;
+    }
+  .FilterMain .ComboFilter
+    {
+  	width: 100%;
+    }
+    
+.FilterMain h1 {
+	font-size: 22px;
+	text-align: left;
+  } 
+.ComboFilter {margin:4px 0px;}   
+}
+
+/*Dialogo para seleccionar la localidad*/
+#LocBox {
+	width: 291px;
+	box-sizing: border-box;
+	border: 1px solid rgb(100, 100, 100);
+	font-size: 14px;
+	background-color: white;
+	z-index: 3500;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+    
+#LocBox .Left {
+	width: 130px;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	z-index: 10;
+	position: relative;
+  }
+    
+#LocBox .Rigth {
+	width: 160px;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	margin-left: -1px;
+	background-color: #F1F1F1;
+	border-left: 1px solid rgb(150, 150, 150);
+	height: 100%;
+	position: absolute;
+	overflow: auto;
+	top: 0;
+  } 
+   
+#LocBox .item {
+	height: 35px;
+	line-height: 25px;
+	padding: 5px;
+	box-sizing: border-box;
+}  
+    
+#LocBox .item:hover  { background-color: aliceblue; width:99%;} 
+#LocBox .item.select {
+	background-color: #F1F1F1;
+	border-top: 1px solid rgb(150, 150, 150);
+	border-bottom: 1px solid rgb(150, 150, 150);
+  }   
+#LocBox .item.select:hover {width: 100%;}  
+
+/*Dialogo para rango de precios*/
+#PrecioBox {
+	width: 300px;
+  background-color:#FFFFFF;
+	border: 1px solid rgb(119, 119, 119);
+	box-sizing: border-box;
+  font-size: 14px;
+	z-index: 3500;
+	padding: 10px;
+  line-height:30px;
+  }
+
+#PrecioBox .RangeFix {
+	margin-top: -6px;
+  margin-bottom: 8px;
+  }
+  
+#PrecioBox .RangeFix label{
+	font-weight: 600;
+  cursor: pointer;
+  }
+  
+#PrecioBox label input {
+  vertical-align:text-bottom;
+  margin-bottom:2px;
+  }
+  
+#RangeBox {
+	height: 80px;
+	position: relative;
+	box-sizing: border-box;
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+  }  
+  
+#RangeBox .Bar {
+	width: 100%;
+	height: 10px;
+	border: 1px solid rgb(119, 119, 119);
+	background-color: rgb(6, 181, 217);
+  }
+
+#RangeBox .Pointer {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+  cursor:pointer;
+  }     
+  
+#RangeBox label { font-size: 13px; }
+#PointerLeft img { float:right; }  
+
+/*Dialogo para seleccionar habitaciones*/
+#HabitsBox {
+	width: 300px;
+  background-color:#FFFFFF;
+	border: 1px solid rgb(119, 119, 119);
+	box-sizing: border-box;
+  font-size: 14px;
+	z-index: 3500;
+	padding: 10px;
+  line-height:36px;
+  }
+  
+#HabitsBox .NumHab { line-height: 28px; }  
+#HabitsBox .hab {
+	font-weight: 600;
+	width: 80px;
+	display: inline-block;
+	text-align: right;
+	padding-right: 5px;
+}
+  
+#HabitsBox .Estud {
+	margin-left:30px;
+  margin-top:-10px;
+  font-weight:600;
+  } 
+    
+/*Dialogo de otros parametros para filtrar casa*/
+#BoxOtros {
+	display: none;
+	position: absolute;
+	width: 366px;
+	height: auto;
+	border: 1px solid #000000;
+	background-color: #FFFFFF;
+	z-index: 3500;
+	box-sizing: border-box;
+	font-size: 14px;
+  line-height:normal;
+  white-space: normal;
+  }
+  
+#BoxOtros .chkItem {
+	display: inline-block;
+	width: 180px;
+	height: 40px;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 5px;
+	box-sizing: border-box;
+  }  
+
+#BoxOtros .chkItem img
+  {
+  width: 20px;
+  height: 20px;
+  margin-right:5px;
+  vertical-align: middle;
+  }
+
+#BoxOtros .chkItem input {
+	margin-right: 5px;
+	width: 15px;
+	height: 15px;
+	margin-top: 8px;
+  }
+
+#BoxOtros .chkItem span
+  {
+  vertical-align: middle;
+  }
+
+@media (max-width: 380px) { 
+  #BoxOtros{ width:100%; font-size: 12px;}
+  #BoxOtros .chkItem { width: 147px; }  
+  }
+
+/*Dialogo para loguearse o crear usuario nuevo*/
+#BoxUser {width: 200px;}
+.BoxFloat 
+  {
+	display: none;
+	position: absolute;
+	border: 1px solid #000000;
+	background-color: #FFFFFF;
+	z-index: 3500;
+	line-height: normal;
+	cursor: default;
+	white-space: normal;
+  font-weight:normal;
+  padding: 10px;
+  color: #101010;
+  box-shadow: 5px 5px 30px #808080;
+  box-sizing:border-box;
+  }
+
+.LineInput
+  {
+  border: 1px solid #808080;  
+  padding:5px;
+  margin-bottom:10px;
+  box-sizing:border-box;
+  width:100%;
+  }
+
+.btnRight{ width:110px; float:right; }
+.btnLeft{ width:30px;  float:left; }
+    
+.btnRight, .btnLeft {
+  border: 1px solid #808080;  
+  padding:5px;
+  margin-bottom:10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  background:#1F9430;
+  color:#FFFFFF;
+  font-weight:600;
+  cursor:pointer;
+  border-radius:5px;
+  }
+  
+.MsgError
+  {
+  display:none;  
+  margin-bottom:10px;
+  color:#D51414;
+  font-size:13px;
+  }
+
+/* Zona de mostrar Destinos */
+.Destinos  
+  {
+  position:relative;  
+/*  height: 850px;*/
+  margin-bottom:70px;
+  }
+
+.Destinos .Title
+  {
+  height: 90px;
+  color: #0077a2;
+  width: 100%;
+  font-size: 24px;
+  text-align:center;
+  line-height: 105px;
+  font-weight: 700;
+  }
+
+.Destinos .Frame
+  {
+  position:relative;
+  width:975px;
+  height:auto;
+  
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:5px;
+  padding-left:5px;
+  }
+  
+.Destinos .Frame .Box
+  {
+  display: inline-block;
+  width: 320px;
+  height: 320px;
+  margin-right:1px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  vertical-align: top;
+  position:relative;
+  cursor:pointer;
+  }
+  
+.Destinos .Frame .Box .Hdr
+  {
+  position: absolute;
+  bottom: 0px;
+  color: #FFFFFF;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: 2px 2px 0px #000;
+  }
+  
+.Destinos .Frame .Box .Hdr span {font-size:14px;}
+.Destinos .Frame .Box img {	width: 100%; }
+
+@media (min-width: 690px) and (max-width: 980px) {
+  .Destinos {margin-bottom:50px;}
+  .Destinos .Frame { width:650px;}
+  }
+@media (min-width: 380px) and (max-width: 690px)  {
+  .Destinos {margin-bottom:30px;}
+  .Destinos .Frame { width:330px;}
+  }
+@media (max-width: 380px) { 
+  .Destinos {margin-bottom:20px;}
+  .Destinos .Frame
+    {
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:0px;
+    margin-top: 5px;
+    border:0;
+    }
+    
+  .Destinos .Frame .Box
+    {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+    }
+    
+  .Destinos .Frame .Box:nth-child(1n+4)    
+    {
+    display: none;
+    }
+    
+  .Destinos .Title 
+    {
+    height: 60px;
+    line-height: 70px;
+    }  
+  }
+  
+/* Zona de propaganda de Booking Cuba Tour */
+.Booking
+  {
+  margin-bottom: 20px;
+  background-image: url(../images/Booking.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position:relative;
+  }
+
+.Booking .imgBCT
+  {
+  visibility:hidden;
+  width:100%;
+  height: auto;  
+  min-width:580px;
+  }
+  
+.Booking .Box{
+  position:absolute; 
+  bottom:10%; 
+  width:100%;
+  }
+  
+.Booking h1{
+  text-align:center; 
+  color:#FFFFFF;
+  text-shadow: 2px 2px 0px #000;
+  }
+  
+.Booking h4{
+  text-align:center; 
+  color:#FFFFFF;
+  outline-color:#FB0004;
+  text-shadow: 2px 2px 0px #000;
+  }
+  
+.Booking .Box img{
+  width:250px; 
+  margin-left:auto; 
+  margin-right:auto; 
+  display:block;
+  }
+
+@media (max-width: 767px) { 
+.Booking .Box img { width: 180px; }
+.Booking .Box { bottom: 5%; }
+.Booking h4 { margin: 10px; }
+.Booking h1 { margin: 10px; }
+}
+@media (max-width: 520px) { 
+.Booking h1 { font-size:22px; }
+.Booking .Box { bottom: 3%; }
+}
+
+/* Zona de casas destacadas */
+.busca
+  {
+  background-color: #F0F1F3;
+  padding-bottom: 40px;
+  }
+  
+.busca .Title
+  {
+  position: relative;
+  top: 0px;
+  padding-top: 45px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  }
+  
+.busca .text
+  {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 18px;
+  }
+
+#Destacadas  
+  {
+  position:relative;  
+/*  height: 850px;*/
+  margin-bottom:70px;
+  }
+
+#Destacadas .Title
+  {
+  height: 90px;
+  color: #0077a2;
+  width: 100%;
+  font-size: 24px;
+  text-align:center;
+  line-height: 105px;
+  font-weight: 700;
+	box-sizing: border-box;
+  }
+
+#Destacadas .Frame
+  {
+  position:relative;
+  width:975px;
+  height:auto;
+  
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:5px;
+  padding-left:5px;
+  }
+  
+#Destacadas .Frame .Box
+  {
+  display: inline-block;
+  position:relative;
+  width: 320px;
+  height: 240px;
+  margin-right:1px;
+  margin-bottom1: 5px;
+  overflow: hidden;
+  cursor:pointer;
+  }
+  
+#Destacadas .Frame .Box .ImgCasa
+  {
+  width: 100%;
+  height: 100%;
+  }
+  
+#Destacadas .Frame .Box .Stars
+  {
+	position: absolute;
+	right: 6px;
+  top:2px;
+	cursor: pointer;
+  z-index:300;
+  }
+  
+#Destacadas .Frame .Box .footer
+  {
+  position:absolute;	  
+  width:100%;	   
+  height:30px; 
+  bottom:0px;
+  background-color: rgba(0,0,0,0.27);
+  color:#FFFFFF;
+  cursor: pointer;
+  z-index:5;
+  }
+  
+#Destacadas .Frame .Box .footer .title
+  {
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  }
+  
+#Destacadas .Frame .Box .footer img
+  {
+  float:right;
+  margin-top: 1px;
+  margin-bottom: -6px;
+  }
+  
+#Destacadas .Frame .Box .footer .precio
+  {
+  float:right;
+	width: 67px;
+	height: 30px;
+	background-color: #00a5a5;
+	text-align: center;
+	line-height: 30px;
+  }
+
+@media (min-width: 690px) and (max-width: 980px) {
+  #Destacadas {margin-bottom:50px;}
+  #Destacadas .Frame { width:650px;}
+  }
+@media (min-width: 380px) and (max-width: 690px) {
+  #Destacadas {margin-bottom:30px;}
+  #Destacadas .Frame { width:330px;}
+  }
+@media (max-width: 380px) {
+  #Destacadas .Title 
+    {
+    height: auto;
+    font-size: 18px;
+    line-height: normal;
+    padding: 10px;
+    }  
+    
+  .busca { padding-bottom: 15px; }
+  .busca .Title { padding-top: 15px; }
+  .busca .text { display: none;}  
+  }
+@media (max-width: 380px) { 
+  #Destacadas {margin-bottom:20px;}
+  #Destacadas .Frame
+    {
+    position:relative;
+    width:100%;
+    height:auto;
+    padding:0px;
+    margin-top: 5px;
+    border:0;
+    }
+    
+  #Destacadas .Frame .Box
+    {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    }
+       
+  #Destacadas .Frame .Box:nth-child(1n+4) { display: none; }
+  #Destacadas .Frame .Box .ImgCasa { margin-bottom:-4px; }
+  }
+
+/* Recuadro para los detalles de una casa*/ 
+.BoxDeatails
+  {
+	position:absolute;
+  top:100%;
+	width: 100%;
+	height: 100%;
+	background-color: #0077a2;
+  color:#FFFFFF;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:15px;
+  padding-bottom:30px;
+  overflow-y:auto;
+  box-sizing:border-box;
+  cursor:default;
+  }
+
+.BoxDeatails .roll
+  {
+  border-bottom: 2px solid #F1F1F1;
+  font-size: 14px;
+  cursor: pointer;
+  line-height:30px;
+  height:30px;
+  }
+  
+.BoxDeatails .Menu {
+	font-size: 12px;
+	text-align: left;
+	font-weight: lighter;
+	line-height: 29px;
+	text-indent: 6px;
+	margin-top: 8px;
+	float: left;
+	height: 150px;
+	width: 145px;
+  }
+  
+.BoxDeatails .Menu img
+  {
+	width: 24px;
+	float: left;
+  }
+
+/*-- Zona para me gusta --*/
+.MeGusta
+  {
+  background-color: #F0F1F3;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 5%;
+  padding-bottom:5%;
+  font-weight: bold;
+  margin-top: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
+  }
+  
+.MeGusta a
+  {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0077A2;
+  }
+  
+.MeGusta .button 
+  {
+	width: 160px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 9px;
+	border: 1px solid #D8D6D6;
+	background-color: #FCFCFC;
+	font-weight: lighter;
+	cursor: pointer;
+	height: 40px;
+	line-height: 40px;
+	padding: 5px;
+  border-radius:8px;
+  }
+  
+.MeGusta .button img { vertical-align:middle;  }
+
+@media (max-width: 380px) {
+  .MeGusta { margin-top: 20px; } 
+  }
+  
+/*-- Zona del Footer --*/
+#PageFooter
+  {
+  background-color: #0077A2;
+  color: #F7F4F4;
+  padding-bottom:4%;
+  }
+  
+#PageFooter .content
+  {
+  width: 828px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: thin solid #F7F7F7;
+  padding-bottom:2%;
+  font-size: 14px;
+  color: #FFFFFF;
+  }
+
+#PageFooter .content .block
+  {
+  padding-top:30px;
+  display:inline-block;
+  box-sizing:border-box;
+  vertical-align:top;
+  }
+  
+#PageFooter .contacto { width: 300px;}
+#PageFooter .correo   { width: 220px;}
+#PageFooter .Pages    { width: 200px;}
+#PageFooter .contacto, #PageFooter .correo {margin-right: 50px;}  
+  
+#PageFooter .block .Title
+  {
+  font-size: 16px;
+  font-weight: bold;
+	margin-bottom: 15px;
+  }
+  
+#PageFooter .block .text {
+	letter-spacing: 0.5px;
+	line-height: 20px;
+  }
+  
+#PageFooter .correo img {
+	vertical-align: middle;
+	padding-bottom: 3px;
+	margin-right: 5px;
+  }  
+  
+#PageFooter .block a{
+  text-decoration: none;
+  line-height:30px;
+  font-size: 14px;
+  color: #FFFFFF;
+  }
+  
+#PageFooter .rigths
+  {
+  text-align: center;
+  font-size: small;
+  margin-top: 20px;
+  }
+
+@media (max-width: 840px) {
+#PageFooter .content { width: 574px; }  
+#PageFooter .correo {margin-right: 0px;}  
+#PageFooter .block.Pages { display: none; }  
+}
+@media (max-width: 585px) {
+#PageFooter .content { width: 300px; }  
+#PageFooter .contacto {margin-right: 0px;}  
+}
+
+/* Para la página de listdo de casa*/
+/* De filtrado  */
+#casasHrd {
+  position:relative;
+  height:50px;
+  line-height:50px;
+  padding: 0px 5px;
+  }
+
+#casasHrd .lstType img {
+	width: 50px;
+	height: 50px;
+	padding: 9px 10px 5px 10px;
+	box-sizing: border-box;
+	vertical-align: bottom;
+  }
+
+#btnOrden {
+  border: 1px solid #D8D8D8;
+  width: 200px;
+  display: inline-block;
+  height: 35px;
+  vertical-align: middle;
+  line-height: 35px;
+  padding: 0px 6px;
+  box-sizing: border-box;
+  background-image: url(../images/flecha.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  }
+  
+#frmCasas
+  {
+  position:relative;
+  width:975px;
+  height:auto;
+  min-height:700px;
+  
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:30px;
+  }
+  
+.BoxCasa
+  {
+	display: block;
+	width: 100%;
+  border:2px solid #d0d1d3;
+	height: 240px;
+  overflow:hidden;
+  margin:5px 0;
+  position:relative;
+  }
+  
+.leftBox {
+	display:inline-block;
+	width: 320px;
+  min-height:240px;
+  position:relative;
+  box-sizing:border-box;
+  float:left;
+  overflow:hidden;
+  }
+
+.CasaMBox {
+	height:240px;
+	width: 320px;
+  margin-bottom:-4.4px;
+  position:relative;
+  }
+
+.leftBox .Precio{
+  background-color: rgba(0,165,165,0.50);
+  height: 35px;
+  line-height: 35px;
+  padding-left: 8px;
+  padding-right: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  z-index:5;
+  }
+  
+.OnImg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+  }
+.OnImg:hover{ opacity:0; }
+
+.rigthBox {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 35px;
+	position: relative;
+  box-sizing:border-box;
+  width:655px;
+  height:100%;
+  float:left;
+  padding-bottom:35px;
+  }  
+  
+.rigthBox .hdr {
+	height: 35px;
+	background-color: #D8D8D8;
+  box-sizing:border-box;
+  padding-left:4px;
+  padding-right:20px;
+  font-size:18px;
+  font-weight:700;
+  color:#33719d;
+  overflow: hidden;
+  }
+  
+.rigthBox .hdr span {
+	cursor: pointer;
+	padding: 5px;
+  }
+
+.Puntos {
+	box-sizing: border-box;
+	font-size: 12px;
+	font-weight: 600;
+	color: #000;
+  padding: 0px 5px;  
+	background-color: #D8D8D8;
+  }
+
+.Puntos img {
+	vertical-align: middle;
+  margin-bottom: 5px;
+  }    
+
+.rigthBox p {
+	line-height: 20px;
+	margin: 0;
+  padding:10px 10px 5px 10px;
+  font-size:15px;
+  max-height:125px; 
+  overflow-y:auto;
+  }
+
+.features {
+	padding-left: 10px;
+	background-color: #FFF;
+	line-height: 0px;
+  }
+    
+.features .Item 
+  {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	margin-right: 20px;
+	box-sizing: border-box;
+  }
+
+.features .Item img
+  {
+  width: 20px;
+  height: 20px;
+  margin-right:5px;
+  vertical-align: middle;
+  margin-bottom:4px;
+  }
+    
+.rigthBox .foot {
+	box-sizing: border-box;
+	height: 35px;
+	border-top: 2px solid #d0d1d3;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+  font-size:14px;
+  color:#303435;
+  background-color:#ffffff;
+  }
+  
+.rigthBox .foot .l { display:inline; }
+.rigthBox .foot .s { display:none; }
+.rigthBox .foot .m { display:none; }
+
+.GoCasa{ cursor:pointer}
+
+.GoCasa .Reserva{
+  padding:5px 10px 7px 10px;
+  margin-right:5px;
+  color:#3EA52F;
+  font-weight:700;
+  }
+  
+.GoCasa .Reserva img {
+	height: 25px;
+	vertical-align: middle;
+  }  
+  
+.GoCasa .SeeMore{
+  padding:5px 15px 7px 5px;
+  font-weight:700;
+  color:#AAAAAA;
+  }
+
+@media (max-width: 1000px){
+  #frmCasas { width:750px; }
+  .rigthBox { width:430px; }  
+  .features .Item span { display: none; }  
+  .features .Item  { width: 20px; }
+   
+  .rigthBox .foot .l { display:none; }
+  .rigthBox .foot .s { display:inline; }
+  .rigthBox .foot .m { display:none; }
+  }
+@media (max-width: 767px) { 
+  #frmCasas { width:100%; }
+  .leftBox  { width:40%; height: 100%;}
+  .leftBox .ImgCasa {height:auto; width: 100%; }
+  .leftBox .Precio {width:100%}
+  
+  .rigthBox { width:60%; }  
+	.rigthBox .foot {border-left-width: 6px;}
+	.rigthBox .foot {border-right-width: 0;}
+  
+  .rigthBox .foot .l { display:none; }
+  .rigthBox .foot .s { display:none; }
+  .rigthBox .foot .m { display:inline; }
+  
+  .rigthBox p { font-size:14px }
+
+  .Puntos label {display: none;}
+  }  
+@media (max-width: 540px) { 
+  #frmCasas { width:320px;}
+  .BoxCasa  { height:auto;}
+  .leftBox  { width:320px; height:240px;}
+  .rigthBox { width:320px; height:240px; }  
+  .leftBox .ImgCasa {height:240px; width:320px; }
+  #lbOrden, #btnLista, #btnGrid { display:none;}
+  .GoCasa .Reserva label {display: none;}
+  }
+
+/* Para listo en modo mosico*/
+#frmCasas.CasaGrid { width:1320px;}  /*330 por casa (4 columnas)*/
+#frmCasas.CasaGrid .BoxCasa  { display:inline-block; width:320px; height:auto; margin:5px; box-sizing:border-box;}
+#frmCasas.CasaGrid .leftBox .ImgCasa {height:237px; width:316px;}
+#frmCasas.CasaGrid .leftBox  { width:316px; }
+#frmCasas.CasaGrid .rigthBox { width:316px; height:240px; }  
+#frmCasas.CasaGrid .features .Item span { display: none; }  
+#frmCasas.CasaGrid .features .Item  { width: 20px; }
+#frmCasas.CasaGrid .rigthBox .foot .l { display:none; }
+#frmCasas.CasaGrid .rigthBox .foot .s { display:none; }
+#frmCasas.CasaGrid .rigthBox .foot .m { display:inline; }
+#frmCasas.CasaGrid .leftBox .Precio {width:100%}
+#frmCasas.CasaGrid .rigthBox .foot {border-left-width: 6px; border-right-width: 0;}
+#frmCasas.CasaGrid .rigthBox p { font-size:14px }
+#frmCasas.CasaGrid .Puntos label {display: none;}
+#frmCasas.CasaGrid .GoCasa .Reserva label {display: none;}
+
+@media (max-width: 1330px) { 
+#frmCasas.CasaGrid { width:990px;}  /*330 por casa (3 columnas)*/
+}
+@media (max-width: 1000px) { 
+#frmCasas.CasaGrid { width:660px;}  /*330 por casa (2 columnas)*/
+}
+@media (max-width: 670px) { 
+#frmCasas.CasaGrid { width:320px;}  /*(1 columnas)*/
+#frmCasas.CasaGrid .BoxCasa  { margin:0px;}
+}
+
+
+#ViewCasa, #EditCasa{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+#ViewCasa *, #EditCasa * {box-sizing:border-box;}  
+  
+.frame { display:table; width:100%;}
+.t-row { display:table-row;  }
+.t-cel { display:table-cell; }
+  
+#ViewCasa h1, #EditCasa h1 {
+  font-size:24px; 
+  font-weight:700; 
+  /*padding-left:10px;*/ 
+  /*margin-top:5px;*/ 
+  /*margin-bottom:10px;*/ 
+  /*background-color:#F8F8F8;*/ 
+  /*line-height:50px;*/ 
+  position:relative;
+  text-align:center;
+  }  
+
+.frame h2 {
+	position: relative;
+	margin-left: 250px;
+	margin-top: 0;
+	margin-bottom: 0;
+  font-size:16px;
+  }
+
+.frame h2 span{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  color:#33719d;
+  }  
+
+.BotonM, .BotonG{
+  border:1px solid #AAA; 
+  padding:0px 20px;
+  border-radius:5px;
+  background-color:#FFF;
+  }
+  
+.BotonM {height:40px; line-height:40px;}
+.BotonM img {height:35px; vertical-align:middle; margin-bottom:5px;}
+
+.BotonG {height:50px; line-height:50px;}
+.BotonG img {height:40px; vertical-align:middle; margin-bottom:5px;}
+
+#btnReserva{
+  margin-right:10px;
+  z-index: 1000;  
+  }
+  
+#ViewCasa .foto, #EditCasa .foto{ 
+  padding: 20px 20px 0px 20px;
+  width:250px; 
+  float:left; 
+  vertical-align:top; 
+  text-align:center; 
+  position: relative;
+  }
+
+#pDir {margin-bottom:10px; }  
+
+#ViewCasa .foto { margin-top:-60px;}
+#ViewCasa .foto img, #EditCasa .foto img {
+	width: 100%;
+/*	border-radius: 50%;*/
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding: 1px;
+  }
+  
+#ViewCasa .foto .fotoframe, #EditCasa .foto .fotoframe{
+  min-height: 200px;
+	border: 1px solid rgb(209, 207, 207);
+  }
+  
+#ViewCasa .foto label, #EditCasa .foto label {
+	text-align: center;
+  font-size:12px;
+  }  
+ 
+ #Resumen {
+  position:relative;
+	vertical-align:top;
+  margin-left:250px;
+  }
+  
+.Red, #PreciosBox { color: #D05D2B;}
+
+#PreciosBox {
+	border: 1px solid #ff8080;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #fff6f6;
+  }  
+
+#PreciosBox .lbTemp, .lbByTemp {
+	font-size: 14px;
+	color: #666;
+	margin: 10px;
+  }
+   
+#PreciosBox .lbTemp {display: block; }
+   
+#tmpAlta {
+	width: 14px;
+	height: 14px;
+	margin-bottom: 6px;
+  }
+  
+.LstVals.features { clear:left;}
+  
+.cmds {
+	border-bottom: 1px solid #AAA;
+	line-height: 50px;
+  text-align:right;
+  } 
+  
+.cmds .item {
+	display: inline-block;
+	line-height: normal;
+	vertical-align: bottom;
+  padding:5px;
+  margin-right:20px;
+  cursor:pointer;
+  }  
+
+.cmds .item:hover { background-color:aliceblue;}
+  
+.UpSep {
+	border-top: 1px solid #AAA;
+	margin-top: 20px;
+  }
+  
+.SubTitle { margin-top: 5px; font-size: 20px;}
+
+@media (max-width: 1000px) { 
+#ViewCasa, #EditCasa { width: 100%; padding-left:10px; padding-right:10px; box-sizing:border-box;}
+}
+@media (max-width: 720px) { 
+  #Resumen { margin-left:0; }
+  #Resumen .LstVals { float:left; }
+  #EditCasa .foto{ margin-left:auto; margin-right:auto; float:none; }
+  }
+@media (max-width: 650px) { 
+.cmds .item .hide { display:none }
+#ViewCasa .foto, #EditCasa .foto{ margin-top:0;}
+.frame h2 {margin-left:0;}
+#EditCasa #ctrlCbLoc{ float:none;}
+#EditCasa .ComboFilter{ width:190px;}
+}
+@media (max-width: 500px) { 
+#ViewCasa .foto, #EditCasa .foto{ margin-left:auto; margin-right:auto; float:none; }
+.cmds .item { margin-right:8px; }  
+}
+@media (max-width: 400px) { 
+#btnReserva {position:static;}
+.frame h1 label {display:none;}
+}
+
+/*Tab que muestra las habitaciones*/
+.Habits .Tab {
+	padding: 0px;
+	margin: 0px;
+  white-space: nowrap;  
+  }
+
+.Habits .TabItem {
+	display: inline-block;
+	padding: 6px;
+	border-left: 1px solid #AAA;
+	border-top: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	border-top-right-radius:2px;
+	border-top-left-radius:2px;
+  }
+
+.Habits .TabContent {
+	width: 100%;
+	border: 1px solid #AAA;
+	min-height: 400px;
+  background-color:#F0F0F0;
+  padding:10px;
+  margin-top:-1px;
+  }
+  
+.Habits .TabItem.Active {
+	background-color: #F0F0F0;
+	z-index: 200;
+	position: relative;
+  }
+  
+.frame .FrmCasaM { width:320px; height:240px; float:left; position:relative; margin-bottom:10px; overflow:hidden;}
+.frame .FrmCasaM .ImgCasa { width:100%; height:100%;}
+.frame .CasaDesM { margin-left: 320px; padding-left:10px;}
+.CasaDesM p {margin: 0;}  
+
+@media (max-width: 700px) { 
+.frame .FrmCasaM {
+	float: none;
+	width: 100%;
+	height: auto;
+}
+.frame .CasaDesM { margin-left:0; padding-left:0;}
+}
+  
+/* Lista de características */
+.LstVals ul { padding:0; margin:10px 0px;}
+.LstVals ul *{ display:inline-block;}
+.LstVals li { line-height:30px; width:180px; white-space:nowrap;}
+.LstVals label { text-align:left;}
+.LstVals.ct label { text-align: right; width: 150px;}
+.LstVals b { text-align:left; }
+
+.Facilid.LstVals li { width:175px;}
+#Resumen .LstVals li, #PreciosBox.LstVals li {width: 220px;}
+
+.camas.LstVals li { width:100px;}
+.camas.LstVals h2 { margin-bottom:0px;}
+
+.camasIn.LstVals li { width:135px;}
+.camasIn.LstVals label { text-align:right; width:80px; }
+
+.habTipo.LstVals li { width:140px;}
+.habTipo.LstVals .Hover { text-align:center; margin-left:50px;}
+
+.LstVals.features li { width:165px;}
+.LstVals.aptoFeats li { width:205px;}
+
+/*Zona para poner la puntuación a la casa*/
+.Rank, .Pnts {
+	top: 0px;
+	right: 0px;
+	line-height: 25px;
+  margin-right:10px;
+  font-size:16px;
+  }
+
+.Rank label{ vertical-align:super; }
+  
+.Rank .Back, .Pnts .Back {
+	position: relative;
+	background-color: rgb(208, 209, 211);
+	width: 100px;
+	height: 25px;
+	display: inline-block;
+  }
+  
+.Rank .Color, .Pnts .Color {
+	position: absolute;
+	height: 25px;
+	width: 50px;
+	background-color:#ffac08;
+  }  
+  
+.Rank .Back img, .Pnts .Back img {
+	vertical-align: middle;
+	margin-bottom: 4px;
+  }
+
+.NumPts { float:left; width:38px; margin-top:3px; }
+
+#RankMsg {width:200px;}
+#RankOK {width:60px; margin-left:auto; margin-right:auto; background-color:#1D780B; color:#FFF; text-align:center; padding:6px;}
+
+@media (max-width: 675px) { 
+.Rank { position:static; }
+}
+
+/*Zona para mostrar las imagenes de las casas*/
+#ViewFotos {
+  margin-top:10px; 
+  background-color:#f6f6f6; 
+  padding:10px;
+  }
+
+#FrameFoto {
+  width:800px; 
+  height:600px; 
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom:10px;
+  position:relative;
+  box-shadow:5px 5px 80px -20px #000000;
+  overflow:hidden;
+  background-color:#FFFFFF;
+  }
+
+#FrameFoto .ImgCasa { width:100%; height:100%; }
+  
+#FrameBrowse {
+  width:100%;
+  height:79px;
+  position:relative;
+  overflow:hidden;
+  background-color:#FFFFFF;
+  }
+  
+#BrowFotos {
+  position:absolute;
+  left:2px;
+  top:0px;
+  white-space:nowrap;
+  }
+  
+#BrowFotos img {
+  width:100px;
+  height:75px;
+  margin:2px 2px 2px 0px;
+  }
+
+.SelFoto{
+  outline: 2px solid rgb(0, 0, 0) !important;  
+  }
+
+#BrowLeft, #BrowRight{
+  width:30px;
+  height:100%;
+  background-color:#EEE;
+  z-index:100;
+  position:relative;
+  display:none;
+  }
+
+#BrowLeft{ float:left; }
+#BrowRight{ float:right; }
+
+#BrowLeft img, #BrowRight img {
+	margin-top: -25px;
+	position: relative;
+	top: 50%;
+  } 
+
+#BrowRight img { margin-left: -20px; } 
+
+@media (max-width: 1400px) { 
+#FrameFoto {width:640px; height:480px;}
+}
+@media (max-width: 840px) { 
+  #ViewFotos { padding:0px; }
+  #FrameFoto { width:100%; height:auto; box-shadow:none;}
+  }
+@media (max-width: 500px) { 
+  #FrameBrowse { display:none; }
+  }
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+.BtnFlat {
+  position: relative;
+	width: 180px;
+	height: 30px;
+	color: #1D780B;
+	font-weight: 600;
+	text-align: center;
+	line-height: 30px;
+  }
+  
+.UpInput {
+	height:100%;
+	width:100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+  } 
+  
+#pName {
+	width:160px;
+	padding: 3px 6px;
+	margin-top: 5px;
+  font-size:13px;  
+  }
+
+input, textarea {
+	font-size: 16px;
+	font-family: Gotham,"Helvetica",Helvetica,Arial,sans-serif;
+  color: #565a5c;
+  border: 1px solid #AAA;
+  }
+
+textarea { width:100%;}
+
+input[type="number"] {width: 55px;}
+
+.lbInput {
+	display: table;
+	margin-top: 8px;
+	font-size: 13px;
+	margin-bottom: -2px;
+  clear: right;
+  }
+  
+input[type="checkbox"] {
+	vertical-align: middle;
+	width:18px;
+	height:18px;
+  margin-bottom:8px;
+}  
+
+h1 .ComboFilter {
+	height: 35px;
+	line-height: 35px;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+#ctrlCbLoc {
+	float: right;
+	font-size: 14px;
+	margin-top: 12px;
+	display: inline-block;
+  }
+    
+.Combo{
+	width:100px;
+	height:30px;
+	line-height: 30px;
+	padding-left: 5px; 
+	padding-right: 5px;
+	margin-right: 2px;
+	background-color: #FFFFFF;
+	background-image: url(../images/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	display: inline-block;
+  white-space: nowrap;
+  font-size:14px;
+  font-weight:normal;
+  border:1px solid #AAA;
+  vertical-align: middle;
+  }
+
+.ComboFlat{
+	padding-right: 25px;
+	background-image: url(../images/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	display: inline-block;
+  white-space: nowrap;
+  font-size:14px;
+  }
+
+#PreciosBox .PrecLabel, #PreciosBox .Combo {float:right; }
+
+.wait-in, .wait-up {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+  }
+
+.wait-up { position: absolute; }
+
+ #CasaImgs, .HabImgs {
+	border: 1px solid rgb(170, 170, 170);
+	width: 100%;
+	padding-left: 4px;
+	padding-top: 4px;
+	overflow-y: scroll;
+  } 
+
+ #CasaImgs {height: 290px;} 
+.HabImgs {height: 101px;}
+    
+.CasaImgBox {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	height: 90px;
+	width: 120px; 
+	margin-right: 4px;
+  margin-bottom: 5px;
+  }
+  
+ .DelImg { position:absolute; opacity:0; width:120px; height:90px; z-index:50;} 
+ .DelImg:hover { opacity:1; background-color:rgba(0,0,255,0.1); } 
+ .DelImg img:hover { cursor: pointer; }
+ 
+.UpCmds ul{
+  margin-top: 10px;
+  padding-left: 0px;
+  
+  width:100%; vertical-align:middle;
+  
+  height:100%; display:block; margin-left:auto; margin-right:auto;
+  }
+  
+.UpCmds li{
+  display:inline-block;
+  width:33%;
+  }
+  
+.UpCmds li:nth-child(1) input { width: 250px; }   
+.UpCmds li:nth-child(3) .BtnFlat { margin-left:auto; }   
+    
+#cbSelPrecio {
+  border:1px solid #AAA; 
+  width:150px; padding:10px;
+  background-color:#FFF;
+  color:#565a5c;
+  z-index:80;
+  }
+ 
+#cbSelPrecio .Hover{
+  line-height:35px;
+  padding:0px 5px;
+  display:block;  
+  }
+
+#cbSelPrecio div{ display: block; } 
+
+#cbSelPrecio .prec div{
+	width: 100px;
+	margin-top: -6px;
+	margin-left: auto;
+	margin-right: auto;
+  }    
+  
+ #btnGuardar, #btnEditar, #btnPublicar {
+  margin-top:10px; 
+  width:150px;
+  } 
+  
+ #btnReserva2, #btnCerrar2 {
+  margin-top:10px; 
+  width:110px;
+  } 
+  
+.block50 {
+	display: inline-block;
+	width: 49%;
+  }
+  
+#btnSubir { margin:3px; }   
+
+.btnImgType{
+  height:40px;
+	width: 40px;
+  background-image:url(../images/Down.png);
+  cursor:pointer;
+  }
+  
+#CubreFotos .item-pu { padding:0px 10px; }
+.selected { background-color:#CCC;}
+
+.selLoc {
+	border: 1px solid #AAA;
+	height: 35px;
+	line-height: 35px;
+	vertical-align: middle;
+  } 
+ 
+@media (max-width: 1050px) { 
+  #ctrlCbLoc { float: none; }
+}
+
+#ReservFrm {
+	background-color: rgb(240, 240, 240);
+	max-width: 400px;
+	box-sizing: border-box;
+  padding: 5px 1% 1% 1%;
+  margin: 0 auto;
+  border:1px solid #555;
+  box-shadow:5px 5px 80px -20px #000000;
+  }
+
+.FormInput {
+  margin:0 -10px 0 0;
+	padding: 0;
+  }
+  
+.FormInput * {
+	box-sizing: border-box;
+  padding-right: 10px;
+  }
+  
+.FormInput li {
+	white-space: nowrap;
+	float: left;
+  display:inline-block;
+  }
+
+.FormInput li.col2 { width: 50%; }
+.FormInput li.col3 { width: 33.33%; }
+.FormInput li.col1 { width: 100%; }
+
+.FormInput li label{
+  display:block;
+  font-size: 13px;
+  }
+
+.FormInput input {
+	padding: 5px;
+	margin-bottom: 6px;
+  width:100%;
+}
+
+#ReservFrm #pProp {
+	text-transform: uppercase;
+	font-size: 18px;
+	color: rgb(51, 113, 157);
+	margin-top: -5px;
+	font-weight: bold;
+  text-align:center;
+  margin-bottom:6px;
+  }
+  
+.AllScreen{
+  position:fixed;
+  top:-2px;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.2);
+  z-index:5000;
+}
+
+#ViewComents {
+	width: 100%;
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	box-sizing: border-box;
+}  
+
+#DataComents {
+	position: relative;
+	display: table;
+	width: 100%;
+	padding-top: 15px;
+}
