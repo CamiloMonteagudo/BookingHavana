@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^/(js/|css/|images/)
+
+RewriteRule ^casa-particular-en-(.*)/(.*)/modificar/(.*)$ CasaEdit.php?IdCasa=$3 [L,QSA]
+RewriteRule ^casa-particular-en-(.*)/(.*)/(.*)$ CasaView.php?IdCasa=$3 [L,QSA]
+RewriteRule ^casas-particulares-(.*) CasasList.php [L,QSA]
